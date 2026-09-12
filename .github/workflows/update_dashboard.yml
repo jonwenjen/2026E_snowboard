@@ -1,0 +1,65 @@
+name: Overwrite Snowboard Dashboard
+
+on:
+  schedule:
+    - cron: '0 22 * * *' # 每天早上 06:00 (UTC 22:00) 自動定期更新
+  workflow_dispatch:
+    inputs:
+      user_prompt:
+        description: '輸入自訂行程調整或新需求（留空為預設更新）'
+        required: false
+        default: ''
+  issue_comment:
+    types: [created]
+
+jobs:
+  build-and-deploy:
+    if: |
+      github.event_name == 'schedule' ||
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'issue_comment' && contains(github.event.comment.body, '/build'))
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - name: 簽出 main 分支
+        uses: actions/checkout@v4
+        with:
+          ref: 'main'
+
+      - name: 設定 Python 環境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 安裝相依套件
+        run: pip install google-genai pyspark pandas
+
+      - name: 執行 Spark 運算並呼叫 Gemini Pro 覆寫 index.html
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          EVENT_NAME: ${{ github.event_name }}
+          DISPATCH_PROMPT: ${{ github.event.inputs.user_prompt }}
+          COMMENT_BODY: ${{ github.event.comment.body }}
+        run: |
+          if [ "$EVENT_NAME" = "schedule" ]; then
+            PROMPT="每日定期更新：校對交通與各雪場最新狀態，保持推薦最佳化。"
+          elif [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            PROMPT="${DISPATCH_PROMPT:-常規手動觸發更新}"
+          elif [ "$EVENT_NAME" = "issue_comment" ]; then
+            PROMPT=\((echo "\)COMMENT_BODY" | sed 's|/build||g')
+          fi
+
+          echo "本次執行需求: $PROMPT"
+          python build_and_overwrite.py "$PROMPT"
+
+      - name: 提交並推送覆寫後的 index.html
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Auto-overwrite dashboard [\({{ github.event_name }}] -\)(date +'%Y-%m-%d %H:%M:%S')" || exit 0
+          git push origin main
