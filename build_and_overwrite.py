@@ -1,12 +1,25 @@
 import os
-import sys
+import re
 from google import genai
 from pyspark.sql import SparkSession
 
-# 1. 取得使用者動態指令（若無則執行標準更新）
-user_requirement = (
-    sys.argv[1] if len(sys.argv) > 1 else "標準頂級滑雪美饌行程總覽"
-)
+# 1. 由 Python 安全解析各種觸發來源的指示，完全避免 Bash 語法錯誤
+event_name = os.environ.get("EVENT_NAME", "")
+input_prompt = os.environ.get("USER_PROMPT_INPUT", "").strip()
+comment_body = os.environ.get("COMMENT_BODY", "").strip()
+
+if event_name == "schedule":
+    user_requirement = (
+        "每日定期更新：校對交通與各雪場最新狀態，保持推薦最佳化。"
+    )
+elif event_name == "issue_comment":
+    user_requirement = re.sub(r"^/build\s*", "", comment_body).strip()
+elif input_prompt:
+    user_requirement = input_prompt
+else:
+    user_requirement = "標準頂級滑雪美饌行程總覽"
+
+print(f"本次執行需求: {user_requirement}")
 
 # 2. 啟動 PySpark 建立 12/11 ~ 12/20 結構化行程資料表
 spark = (
@@ -143,8 +156,12 @@ df = spark.createDataFrame(trip_records, columns)
 metrics_json = df.toPandas().to_json(orient="records", force_ascii=False)
 spark.stop()
 
-# 3. 呼叫 Gemini Pro 生成頂級 UI/UX 儀表板
-client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
+# 3. 呼叫 Gemini 生成極致深色雪山風 Dashboard
+api_key = os.environ.get("GEMINI_API_KEY")
+if not api_key:
+    raise ValueError("找不到 GEMINI_API_KEY，請確認 Secrets 是否設定！")
+
+client = genai.Client(api_key=api_key)
 
 prompt = f"""
 你是由頂級日本滑雪教練、專業自由行策劃師與資深前端 UI/UX 設計師組成的菁英團隊。
@@ -172,7 +189,7 @@ prompt = f"""
      * 🍰 必吃甜點與糕點
      * 🍶 特選地酒與飲品
      * 🎁 必買名產伴手禮
-5. 響應式佈局：手機版流暢直列卡片，電腦版優雅寬屏時間軸；內建輕量 JavaScript 搜尋或分頁切換互動。
+5. 響應式佈局：手機版流暢直列卡片，電腦版優雅寬屏時間軸。
 6. 程式碼限制：僅輸出純 HTML 代碼，嚴禁包含 ```html 或 ``` 等 Markdown 圍欄字串。
 """
 
@@ -187,4 +204,4 @@ clean_html = response.text.replace("```html", "").replace("```", "").strip()
 with open("index.html", "w", encoding="utf-8") as f:
     f.write(clean_html)
 
-print("專屬滑雪行程 index.html 已由 Spark + Gemini Pro 覆寫完成！")
+print("專屬滑雪行程 index.html 已成功生成並覆寫！")
