@@ -194,7 +194,7 @@ prompt = f"""
 """
 
 response = client.models.generate_content(
-    model="gemini-3.1-pro-preview",
+    model="Gemini 3.8 Flash",
     contents=prompt,
 )
 
