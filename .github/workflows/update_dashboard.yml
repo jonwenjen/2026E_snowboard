@@ -42,19 +42,10 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           EVENT_NAME: ${{ github.event_name }}
-          DISPATCH_PROMPT: ${{ github.event.inputs.user_prompt }}
+          USER_PROMPT_INPUT: ${{ github.event.inputs.user_prompt }}
           COMMENT_BODY: ${{ github.event.comment.body }}
         run: |
-          if [ "$EVENT_NAME" = "schedule" ]; then
-            PROMPT="每日定期更新：校對交通與各雪場最新狀態，保持推薦最佳化。"
-          elif [ "$EVENT_NAME" = "workflow_dispatch" ]; then
-            PROMPT="${DISPATCH_PROMPT:-常規手動觸發更新}"
-          elif [ "$EVENT_NAME" = "issue_comment" ]; then
-            PROMPT=\((echo "\)COMMENT_BODY" | sed 's|/build||g')
-          fi
-
-          echo "本次執行需求: $PROMPT"
-          python build_and_overwrite.py "$PROMPT"
+          python build_and_overwrite.py
 
       - name: 提交並推送覆寫後的 index.html
         run: |
@@ -63,3 +54,15 @@ jobs:
           git add index.html
           git commit -m "Auto-overwrite dashboard [\({{ github.event_name }}] -\)(date +'%Y-%m-%d %H:%M:%S')" || exit 0
           git push origin main
+
+      - name: 若由 Issue 觸發則自動回覆
+        if: github.event_name == 'issue_comment'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '🎿 **滑雪與美饌行程 Dashboard 已更新完畢！**\n\n🔗 [點此檢視最新頁面](https://jonwenjen.github.io/2026E_snowboard/)'
+            })
