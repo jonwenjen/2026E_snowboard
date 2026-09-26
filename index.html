@@ -1,818 +1,880 @@
 <!DOCTYPE html>
-<html lang="zh-TW" class="dark scroll-smooth">
+<html lang="zh-TW" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2026 日本長野・志賀・淺間頂級滑雪美饌遠征</title>
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
-          },
-          colors: {
-            snow: {
-              50: '#f0f9ff',
-              100: '#e0f2fe',
-              200: '#bae6fd',
-              300: '#7dd3fc',
-              400: '#38bdf8',
-              500: '#0ea5e9',
-              900: '#0c4a6e',
-              950: '#082f49',
-            },
-            darkbg: {
-              base: '#020617',
-              card: '#0b1120',
-              border: '#1e293b',
-            },
-            gold: {
-              400: '#fbbf24',
-              500: '#f59e0b',
-              600: '#d97706',
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 日本長野・志賀・淺間頂級滑雪美饌遠征</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        snow: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            900: '#0c4a6e',
+                            950: '#082f49',
+                        },
+                        night: {
+                            800: '#0f172a',
+                            900: '#0b1120',
+                            950: '#020617',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
+                    }
+                }
             }
-          },
-          boxShadow: {
-            'ice-glow': '0 0 25px -5px rgba(56, 189, 248, 0.15)',
-            'gold-glow': '0 0 20px -3px rgba(245, 158, 11, 0.2)',
-          }
         }
-      }
-    }
-  </script>
-
-  <!-- Lucide Icons CDN -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <style>
-    body {
-      background-color: #020617;
-      color: #f1f5f9;
-      background-image: 
-        radial-gradient(at 10% 10%, rgba(14, 165, 233, 0.08) 0px, transparent 50%),
-        radial-gradient(at 90% 60%, rgba(30, 58, 138, 0.12) 0px, transparent 50%),
-        radial-gradient(at 50% 90%, rgba(245, 158, 11, 0.05) 0px, transparent 50%);
-      background-attachment: fixed;
-    }
-
-    .glass-card {
-      background: rgba(11, 17, 32, 0.75);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .glass-nav {
-      background: rgba(2, 6, 23, 0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(56, 189, 248, 0.15);
-    }
-
-    .pill-food {
-      background: rgba(245, 158, 11, 0.1);
-      border: 1px solid rgba(245, 158, 11, 0.25);
-      color: #fde68a;
-    }
-
-    .pill-dessert {
-      background: rgba(244, 63, 94, 0.1);
-      border: 1px solid rgba(244, 63, 94, 0.25);
-      color: #fecdd3;
-    }
-
-    .pill-drink {
-      background: rgba(14, 165, 233, 0.1);
-      border: 1px solid rgba(14, 165, 233, 0.25);
-      color: #bae6fd;
-    }
-
-    .pill-omiyage {
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid rgba(16, 185, 129, 0.25);
-      color: #a7f3d0;
-    }
-
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #020617;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #1e293b;
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #38bdf8;
-    }
-  </style>
+    </script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            background-color: #020617;
+            color: #f1f5f9;
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+        }
+        .glass-card:hover {
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.15);
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+        }
+        .gold-glow {
+            text-shadow: 0 0 15px rgba(251, 191, 36, 0.4);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #020617;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #38bdf8;
+        }
+    </style>
 </head>
-<body class="min-h-screen font-sans antialiased selection:bg-snow-400 selection:text-slate-950">
+<body class="min-h-screen bg-night-950 text-slate-100 antialiased selection:bg-snow-400 selection:text-night-950">
 
-  <!-- Dynamic Header / Hero -->
-  <header class="sticky top-0 z-50 glass-nav transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap items-center justify-between gap-4">
-      <div class="flex items-center gap-3">
-        <div class="p-2 rounded-xl bg-gradient-to-br from-snow-400 to-indigo-600 text-slate-950 shadow-ice-glow">
-          <i data-lucide="snowflake" class="w-6 h-6 stroke-[2.5]"></i>
-        </div>
-        <div>
-          <span class="text-xs font-semibold tracking-widest text-snow-300 uppercase block">Elite Alpine Expedition</span>
-          <h1 class="text-lg sm:text-xl font-bold bg-gradient-to-r from-white via-snow-200 to-snow-400 bg-clip-text text-transparent">
-            2026 長野・志賀・淺間頂級滑雪美饌遠征
-          </h1>
-        </div>
-      </div>
+    <!-- Hero Header -->
+    <header class="relative overflow-hidden pt-12 pb-16 border-b border-slate-800/80 bg-gradient-to-b from-night-900 via-night-950 to-night-950">
+        <!-- Ambient Glow Effects -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-snow-500/10 blur-[120px] pointer-events-none rounded-full"></div>
+        <div class="absolute top-20 right-10 w-72 h-72 bg-purple-500/10 blur-[100px] pointer-events-none rounded-full"></div>
 
-      <div class="flex items-center gap-3 text-xs">
-        <div class="hidden md:flex items-center gap-2 bg-slate-900/80 px-3 py-1.5 rounded-full border border-slate-800">
-          <span class="relative flex h-2 w-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-          </span>
-          <span class="text-slate-300 font-medium">當前套用需求：每日定期更新（校對交通與雪場狀態）</span>
-        </div>
-        <div class="bg-snow-500/10 border border-snow-400/30 text-snow-300 px-3 py-1.5 rounded-full flex items-center gap-1.5 font-mono">
-          <i data-lucide="clock" class="w-3.5 h-3.5"></i>
-          <span>Updated: Live Sync</span>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-
-    <!-- Expedition Overview Banner -->
-    <div class="glass-card rounded-2xl p-6 sm:p-8 mb-12 relative overflow-hidden shadow-ice-glow">
-      <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-snow-500/10 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="absolute -left-16 -top-16 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
-      
-      <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-        <div class="lg:col-span-8 space-y-4">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold">
-            <i data-lucide="award" class="w-4 h-4"></i>
-            <span>頂級教練 ✕ 自由行策劃 ✕ UIUX 菁英團隊監製</span>
-          </div>
-          <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-            10 天 9 夜 頂級極致雪道與高山美饌漫旅
-          </h2>
-          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-            專為高階滑雪愛好者打造，橫跨 <span class="text-snow-300 font-semibold">丸沼高原 (2,000m)</span>、<span class="text-snow-300 font-semibold">Asama 2000</span>、<span class="text-snow-300 font-semibold">熊之湯</span> 至全日本最高纜車 <span class="text-snow-300 font-semibold">橫手山・澀峠 (2,307m)</span>。結合專車與新幹線高效率轉乘，整合頂級極細粉雪刻滑訓練與信州米其林/在地頂級地產美食饗宴。
-          </p>
-        </div>
-
-        <div class="lg:col-span-4 grid grid-cols-2 gap-3 sm:gap-4">
-          <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3.5 text-center">
-            <span class="text-slate-400 text-xs block mb-1">行程天數</span>
-            <span class="text-xl sm:text-2xl font-black text-snow-400">10 天 9 夜</span>
-          </div>
-          <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3.5 text-center">
-            <span class="text-slate-400 text-xs block mb-1">巡航雪場</span>
-            <span class="text-xl sm:text-2xl font-black text-gold-400">4 大名單</span>
-          </div>
-          <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3.5 text-center">
-            <span class="text-slate-400 text-xs block mb-1">最高海拔</span>
-            <span class="text-xl sm:text-2xl font-black text-snow-300">2,307 m</span>
-          </div>
-          <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-3.5 text-center">
-            <span class="text-slate-400 text-xs block mb-1">往返航點</span>
-            <span class="text-xl sm:text-2xl font-black text-emerald-400">高雄 (KHH)</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Timeline Wrapper -->
-    <div class="relative pl-4 sm:pl-8 lg:pl-0">
-      
-      <!-- Timeline Central Bar (Desktop) -->
-      <div class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-snow-400 via-indigo-500 to-amber-500 -translate-x-1/2 opacity-30"></div>
-      
-      <!-- Mobile Timeline Line -->
-      <div class="lg:hidden absolute left-2 sm:left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-snow-400 via-indigo-500 to-amber-500 opacity-30"></div>
-
-      <div class="space-y-12">
-
-        <!-- Day 1 -->
-        <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-start group">
-          <div class="absolute left-[-17px] sm:left-[9px] lg:left-1/2 lg:-translate-x-1/2 z-20 flex items-center justify-center w-9 h-9 rounded-full bg-slate-950 border-2 border-snow-400 text-snow-400 group-hover:scale-110 group-hover:border-gold-400 transition-all duration-300 shadow-ice-glow">
-            <span class="text-xs font-extrabold">01</span>
-          </div>
-
-          <!-- Left Info (Desktop) -->
-          <div class="lg:col-span-5 lg:text-right space-y-2">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-snow-500/10 border border-snow-400/30 text-snow-300 text-xs font-mono">
-              <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
-              <span>12/11 (三)</span>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Navigation Top Tag -->
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-snow-400/10 border border-snow-400/30 text-snow-300 text-xs font-semibold tracking-wide">
+                    <i data-lucide="snowflake" class="w-4 h-4 animate-spin text-snow-400" style="animation-duration: 12s;"></i>
+                    <span>頂級私旅客製劃定版</span>
+                </div>
+                
+                <!-- Live Status Tag -->
+                <div class="flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs px-3 py-1.5 rounded-full">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    <span>當前套用：每日定期更新 · 交通與雪場動態最佳化</span>
+                </div>
             </div>
-            <h3 class="text-xl font-extrabold text-white group-hover:text-snow-300 transition-colors">高崎 ｜ 裝備補給與都市整備</h3>
-            <p class="text-xs text-slate-400 flex items-center lg:justify-end gap-1">
-              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-snow-400"></i>
-              <span>高崎市區溫泉商旅</span>
+
+            <!-- Title & Subtitle -->
+            <div class="mb-8">
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white mb-4">
+                    2026 日本長野・志賀・淺間<br class="hidden sm:inline"/>
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-snow-200 via-snow-400 to-amber-300 text-glow">
+                        頂級滑雪美饌遠征
+                    </span>
+                </h1>
+                <p class="text-slate-400 text-sm sm:text-base max-w-3xl leading-relaxed">
+                    由頂級滑雪教練、自由行策劃師與 UI/UX 團隊聯手打造。極致粉雪地形、全日本最高海拔纜車、米其林與在地祕境美饌全收錄。
+                </p>
+            </div>
+
+            <!-- Trip Meta Badges Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-8">
+                <div class="glass-card p-4 rounded-xl flex items-center gap-3">
+                    <div class="p-2.5 rounded-lg bg-snow-500/10 text-snow-400 border border-snow-500/20">
+                        <i data-lucide="calendar" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs text-slate-400">天數行程</div>
+                        <div class="text-sm font-bold text-white">10 天 9 夜</div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-4 rounded-xl flex items-center gap-3">
+                    <div class="p-2.5 rounded-lg bg-snow-500/10 text-snow-400 border border-snow-500/20">
+                        <i data-lucide="mountain" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs text-slate-400">巡航雪場</div>
+                        <div class="text-sm font-bold text-white">4 大名峰 (最高2307m)</div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-4 rounded-xl flex items-center gap-3">
+                    <div class="p-2.5 rounded-lg bg-snow-500/10 text-snow-400 border border-snow-500/20">
+                        <i data-lucide="plane-takeoff" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs text-slate-400">航班設定</div>
+                        <div class="text-sm font-bold text-white">高雄 (KHH) 往返</div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-4 rounded-xl flex items-center gap-3">
+                    <div class="p-2.5 rounded-lg bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                        <i data-lucide="award" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs text-slate-400">技術亮點</div>
+                        <div class="text-sm font-bold text-white">Carving / 樹冰 / 饅頭</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resorts Pills Overview -->
+            <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-800/60 text-xs">
+                <span class="text-slate-400 font-medium mr-2">四大攻略雪場：</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-snow-300 border border-slate-700">丸沼高原 (2,000m)</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-snow-300 border border-slate-700">Asama 2000 (2,000m)</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-snow-300 border border-slate-700">熊之湯 (北向細粉雪)</span>
+                <span class="px-2.5 py-1 rounded-md bg-amber-500/10 text-amber-300 border border-amber-500/30 font-semibold">橫手山・澀峠 (2,307m 最高峰)</span>
+            </div>
+
+            <!-- Update Timestamp Info Box -->
+            <div class="mt-6 flex items-center justify-between text-xs text-slate-400 bg-slate-900/50 p-3 rounded-lg border border-slate-800">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="refresh-cw" class="w-3.5 h-3.5 text-snow-400"></i>
+                    <span>系統即時資料集整合完成 (PySpark Engine Active)</span>
+                </div>
+                <div class="text-slate-400 font-mono">
+                    TIMESTAMP: <span class="text-snow-300">2026-12-10 PRE-FLIGHT VERIFIED</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- Timeline Section -->
+        <div class="space-y-8 relative">
+            <!-- Timeline Line (Desktop Background) -->
+            <div class="hidden lg:block absolute left-8 top-6 bottom-6 w-0.5 bg-gradient-to-b from-snow-400/40 via-snow-500/20 to-slate-800 pointer-events-none"></div>
+
+            <!-- ================= DAY 1 ================= -->
+            <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                <!-- Date Badge / Left Column -->
+                <div class="lg:col-span-3 flex lg:flex-col items-center lg:items-start justify-between lg:justify-start gap-3 bg-night-900/90 p-4 rounded-xl border border-slate-800 z-10">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl font-black text-snow-400 font-mono">12/11</span>
+                        <span class="px-2.5 py-0.5 rounded bg-snow-400/10 text-snow-300 border border-snow-400/20 text-xs font-semibold">DAY 01</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white flex items-center gap-1.5">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-snow-400"></i> 高崎
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1">
+                            <i data-lucide="bed" class="w-3.5 h-3.5 text-slate-400"></i> 高崎市區溫泉商旅
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Main Content Card -->
+                <div class="lg:col-span-9 glass-card rounded-2xl p-6 relative">
+                    <div class="mb-4">
+                        <span class="text-xs font-bold tracking-widest text-amber-400 uppercase">DAY THEME</span>
+                        <h4 class="text-xl font-bold text-white">裝備補給與都市整備</h4>
+                    </div>
+
+                    <!-- Tech & Transport Row -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <!-- Tech Pill -->
+                        <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
+                            <div class="flex items-center gap-2 text-snow-400 text-xs font-bold mb-1.5">
+                                <i data-lucide="snowflake" class="w-4 h-4"></i>
+                                <span>⛷️ 滑雪與雪場技術亮點</span>
+                            </div>
+                            <p class="text-sm text-slate-300">無滑雪 (大型雪具整頓 / 雪蠟補給整備)</p>
+                        </div>
+                        <!-- Transport Pill -->
+                        <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
+                            <div class="flex items-center gap-2 text-indigo-400 text-xs font-bold mb-1.5">
+                                <i data-lucide="bus" class="w-4 h-4"></i>
+                                <span>🚌 交通樞紐指南</span>
+                            </div>
+                            <p class="text-sm text-slate-300">東京 / 機場 -&gt; 北陸新幹線 / JR 高崎線 (約 50 分)</p>
+                        </div>
+                    </div>
+
+                    <!-- 4 Gourmet & Omiyage Pills -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                        <div class="bg-red-500/5 border border-red-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-red-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="utensils" class="w-3.5 h-3.5"></i> 🍽️ 精選正餐
+                            </div>
+                            <div class="text-xs text-slate-200">登利平 (群馬烤雞便當)、Shango (炸豬排義大利麵)</div>
+                        </div>
+
+                        <div class="bg-amber-500/5 border border-amber-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-amber-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="cake" class="w-3.5 h-3.5"></i> 🍰 必吃甜點
+                            </div>
+                            <div class="text-xs text-slate-200">Gateau Festa Harada 法國脆餅 (高崎限定生吐司款)</div>
+                        </div>
+
+                        <div class="bg-purple-500/5 border border-purple-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-purple-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="wine" class="w-3.5 h-3.5"></i> 🍶 特選地酒
+                            </div>
+                            <div class="text-xs text-slate-200">群馬地酒 水芭蕉 純米大吟釀、榛名牧場鮮乳</div>
+                        </div>
+
+                        <div class="bg-emerald-500/5 border border-emerald-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-emerald-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="gift" class="w-3.5 h-3.5"></i> 🎁 必買名產
+                            </div>
+                            <div class="text-xs text-slate-200">高崎達摩不倒翁煎餅、上州名物烤饅頭</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= DAY 2 ================= -->
+            <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                <div class="lg:col-span-3 flex lg:flex-col items-center lg:items-start justify-between lg:justify-start gap-3 bg-night-900/90 p-4 rounded-xl border border-slate-800 z-10">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl font-black text-snow-400 font-mono">12/12</span>
+                        <span class="px-2.5 py-0.5 rounded bg-snow-400/10 text-snow-300 border border-snow-400/20 text-xs font-semibold">DAY 02</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white flex items-center gap-1.5">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-snow-400"></i> 丸沼高原 -&gt; 佐久平
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1">
+                            <i data-lucide="bed" class="w-3.5 h-3.5 text-slate-400"></i> 佐久平站前飯店 (東橫INN/Aqua Hotel)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-9 glass-card rounded-2xl p-6 relative">
+                    <div class="mb-4">
+                        <span class="text-xs font-bold tracking-widest text-amber-400 uppercase">DAY THEME</span>
+                        <h4 class="text-xl font-bold text-white">波浪地形與日光白根山粉雪巡航</h4>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
+                            <div class="flex items-center gap-2 text-snow-400 text-xs font-bold mb-1.5">
+                                <i data-lucide="snowflake" class="w-4 h-4"></i>
+                                <span>⛷️ 滑雪與雪場技術亮點</span>
+                            </div>
+                            <p class="text-sm text-slate-300"><strong class="text-snow-300">丸沼高原 (標高 2,000m)</strong>：天然波浪地形公園 (Frozen Wave)、樹林野雪巡航</p>
+                        </div>
+                        <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
+                            <div class="flex items-center gap-2 text-indigo-400 text-xs font-bold mb-1.5">
+                                <i data-lucide="bus" class="w-4 h-4"></i>
+                                <span>🚌 交通樞紐指南</span>
+                            </div>
+                            <p class="text-sm text-slate-300">高崎專車/租車 -&gt; 丸沼 (約75分) -&gt; 下午轉往佐久平 (約80分)</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                        <div class="bg-red-500/5 border border-red-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-red-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="utensils" class="w-3.5 h-3.5"></i> 🍽️ 精選正餐
+                            </div>
+                            <div class="text-xs text-slate-200">佐久乃屋 安養寺熟成味噌拉麵、信州十四草蕎麥麵</div>
+                        </div>
+
+                        <div class="bg-amber-500/5 border border-amber-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-amber-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="cake" class="w-3.5 h-3.5"></i> 🍰 必吃甜點
+                            </div>
+                            <div class="text-xs text-slate-200">和泉屋菓子店 信州蘋果千層派、甘酒霜淇淋</div>
+                        </div>
+
+                        <div class="bg-purple-500/5 border border-purple-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-purple-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="wine" class="w-3.5 h-3.5"></i> 🍶 特選地酒
+                            </div>
+                            <div class="text-xs text-slate-200">佐久名釀 澤之花 純米吟釀、信州白桃果汁</div>
+                        </div>
+
+                        <div class="bg-emerald-500/5 border border-emerald-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-emerald-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="gift" class="w-3.5 h-3.5"></i> 🎁 必買名產
+                            </div>
+                            <div class="text-xs text-slate-200">安養寺味噌漬起司、輕井澤手作果醬</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= DAY 3 ================= -->
+            <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                <div class="lg:col-span-3 flex lg:flex-col items-center lg:items-start justify-between lg:justify-start gap-3 bg-night-900/90 p-4 rounded-xl border border-slate-800 z-10">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl font-black text-snow-400 font-mono">12/13</span>
+                        <span class="px-2.5 py-0.5 rounded bg-snow-400/10 text-snow-300 border border-snow-400/20 text-xs font-semibold">DAY 03</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white flex items-center gap-1.5">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-snow-400"></i> Asama 2000 (高峰高原)
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1">
+                            <i data-lucide="bed" class="w-3.5 h-3.5 text-slate-400"></i> 佐久平站前飯店
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-9 glass-card rounded-2xl p-6 relative">
+                    <div class="mb-4">
+                        <span class="text-xs font-bold tracking-widest text-amber-400 uppercase">DAY THEME</span>
+                        <h4 class="text-xl font-bold text-white">乾燥粉雪與高海拔刻滑 (Carving) 訓練</h4>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
+                            <div class="flex items-center gap-2 text-snow-400 text-xs font-bold mb-1.5">
+                                <i data-lucide="snowflake" class="w-4 h-4"></i>
+                                <span>⛷️ 滑雪與雪場技術亮點</span>
+                            </div>
+                            <p class="text-sm text-slate-300"><strong class="text-snow-300">Asama 2000 (標高 2,000m)</strong>：日本極致乾粉雪、平整壓雪陡坡刻滑 (Carving) 練習</p>
+                        </div>
+                        <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
+                            <div class="flex items-center gap-2 text-indigo-400 text-xs font-bold mb-1.5">
+                                <i data-lucide="bus" class="w-4 h-4"></i>
+                                <span>🚌 交通樞紐指南</span>
+                            </div>
+                            <p class="text-sm text-slate-300">佐久平站蓼科口 -&gt; 高峰高原接駁巴士 (JR Bus, 約 60 分直達)</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                        <div class="bg-red-500/5 border border-red-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-red-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="utensils" class="w-3.5 h-3.5"></i> 🍽️ 精選正餐
+                            </div>
+                            <div class="text-xs text-slate-200">高峰高原餐廳 信州牛黑咖哩、佐久平站前「竹幸亭」地雞炭火燒</div>
+                        </div>
+
+                        <div class="bg-amber-500/5 border border-amber-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-amber-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="cake" class="w-3.5 h-3.5"></i> 🍰 必吃甜點
+                            </div>
+                            <div class="text-xs text-slate-200">雲上 Cafe 手工生乳捲、八岳牛奶泡芙</div>
+                        </div>
+
+                        <div class="bg-purple-500/5 border border-purple-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-purple-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="wine" class="w-3.5 h-3.5"></i> 🍶 特選地酒
+                            </div>
+                            <div class="text-xs text-slate-200">長野精釀 Yona Yona Ale、高山焙茶拿鐵</div>
+                        </div>
+
+                        <div class="bg-emerald-500/5 border border-emerald-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-emerald-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="gift" class="w-3.5 h-3.5"></i> 🎁 必買名產
+                            </div>
+                            <div class="text-xs text-slate-200">淺間山熔岩巧克力、白樺高原牛奶夾心餅</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= DAY 4 ================= -->
+            <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                <div class="lg:col-span-3 flex lg:flex-col items-center lg:items-start justify-between lg:justify-start gap-3 bg-night-900/90 p-4 rounded-xl border border-slate-800 z-10">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl font-black text-snow-400 font-mono">12/14</span>
+                        <span class="px-2.5 py-0.5 rounded bg-snow-400/10 text-snow-300 border border-snow-400/20 text-xs font-semibold">DAY 04</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white flex items-center gap-1.5">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-snow-400"></i> Asama 2000 -&gt; 長野站
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1">
+                            <i data-lucide="bed" class="w-3.5 h-3.5 text-slate-400"></i> 長野站直結飯店 (Hotel Metropolitan)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-9 glass-card rounded-2xl p-6 relative">
+                    <div class="mb-4">
+                        <span class="text-xs font-bold tracking-widest text-amber-400 uppercase">DAY THEME</span>
+                        <h4 class="text-xl font-bold text-white">晨間饅頭坡 (Mogul) 訓練後轉進長野門戶</h4>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
+                            <div class="flex items-center gap-2 text-snow-400 text-xs font-bold mb-1.5">
+                                <i data-lucide="snowflake" class="w-4 h-4"></i>
+                                <span>⛷️ 滑雪與雪場技術亮點</span>
+                            </div>
+                            <p class="text-sm text-slate-300"><strong class="text-snow-300">Asama 2000</strong>：上午進行饅頭坡 (Mogul) 與短半徑回轉練習，中午後撤收轉移</p>
+                        </div>
+                        <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
+                            <div class="flex items-center gap-2 text-indigo-400 text-xs font-bold mb-1.5">
+                                <i data-lucide="bus" class="w-4 h-4"></i>
+                                <span>🚌 交通樞紐指南</span>
+                            </div>
+                            <p class="text-sm text-slate-300">接駁巴士返佐久平站 -&gt; 北陸新幹線 (21分) 抵達長野站</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                        <div class="bg-red-500/5 border border-red-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-red-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="utensils" class="w-3.5 h-3.5"></i> 🍽️ 精選正餐
+                            </div>
+                            <div class="text-xs text-slate-200">明治亭 醬汁炸豬排蓋飯、蕎麥處 草笛 (核桃蕎麥麵)</div>
+                        </div>
+
+                        <div class="bg-amber-500/5 border border-amber-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-amber-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="cake" class="w-3.5 h-3.5"></i> 🍰 必吃甜點
+                            </div>
+                            <div class="text-xs text-slate-200">いろは堂 (炭烤信州御燒餅)、旬彩蘋果肉桂派</div>
+                        </div>
+
+                        <div class="bg-purple-500/5 border border-purple-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-purple-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="wine" class="w-3.5 h-3.5"></i> 🍶 特選地酒
+                            </div>
+                            <div class="text-xs text-slate-200">志賀高原啤酒 (玉村本店 IPA)、千曲杏桃沙士</div>
+                        </div>
+
+                        <div class="bg-emerald-500/5 border border-emerald-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-emerald-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="gift" class="w-3.5 h-3.5"></i> 🎁 必買名產
+                            </div>
+                            <div class="text-xs text-slate-200">八幡屋礒五郎 七味唐辛子 (限定罐)、信州水鈴飴</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= DAY 5 ================= -->
+            <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                <div class="lg:col-span-3 flex lg:flex-col items-center lg:items-start justify-between lg:justify-start gap-3 bg-night-900/90 p-4 rounded-xl border border-slate-800 z-10">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl font-black text-snow-400 font-mono">12/15</span>
+                        <span class="px-2.5 py-0.5 rounded bg-snow-400/10 text-snow-300 border border-snow-400/20 text-xs font-semibold">DAY 05</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white flex items-center gap-1.5">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-snow-400"></i> 長野 -&gt; 熊之湯 -&gt; 橫手山
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1">
+                            <i data-lucide="bed" class="w-3.5 h-3.5 text-slate-400"></i> Hotel & Onsen 2307 Shiga Kogen
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-9 glass-card rounded-2xl p-6 relative">
+                    <div class="mb-4">
+                        <span class="text-xs font-bold tracking-widest text-amber-400 uppercase">DAY THEME</span>
+                        <h4 class="text-xl font-bold text-white">直攻粉雪天堂熊之湯，午後進駐橫手山</h4>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
+                            <div class="flex items-center gap-2 text-snow-400 text-xs font-bold mb-1.5">
+                                <i data-lucide="snowflake" class="w-4 h-4"></i>
+                                <span>⛷️ 滑雪與雪場技術亮點</span>
+                            </div>
+                            <p class="text-sm text-slate-300"><strong class="text-snow-300">熊之湯滑雪場</strong>：全北向單一山谷極致細粉雪、巨型天然饅頭坡、單板技術挑戰</p>
+                        </div>
+                        <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
+                            <div class="flex items-center gap-2 text-indigo-400 text-xs font-bold mb-1.5">
+                                <i data-lucide="bus" class="w-4 h-4"></i>
+                                <span>🚌 交通樞紐指南</span>
+                            </div>
+                            <p class="text-sm text-slate-300">長野站東口 23 號站牌 -&gt; 長電急行巴士 (75分) 直達熊之湯</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                        <div class="bg-red-500/5 border border-red-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-red-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="utensils" class="w-3.5 h-3.5"></i> 🍽️ 精選正餐
+                            </div>
+                            <div class="text-xs text-slate-200">熊之湯山頂餐廳 野澤菜牛肉麵、Hotel 2307 炭火信州牛溫泉會席</div>
+                        </div>
+
+                        <div class="bg-amber-500/5 border border-amber-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-amber-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="cake" class="w-3.5 h-3.5"></i> 🍰 必吃甜點
+                            </div>
+                            <div class="text-xs text-slate-200">橫手山頂「Crumpet Cafe」英式正統鬆餅、高山溫泉饅頭</div>
+                        </div>
+
+                        <div class="bg-purple-500/5 border border-purple-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-purple-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="wine" class="w-3.5 h-3.5"></i> 🍶 特選地酒
+                            </div>
+                            <div class="text-xs text-slate-200">志賀高原深層水低溫滴濾咖啡、玉村本店「其之十」美式 IPA</div>
+                        </div>
+
+                        <div class="bg-emerald-500/5 border border-emerald-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-emerald-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="gift" class="w-3.5 h-3.5"></i> 🎁 必買名產
+                            </div>
+                            <div class="text-xs text-slate-200">志賀高原高山硫磺溫泉粉、善光寺味噌煎餅</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= DAY 6-7 (HIGHLIGHT HIGHEST ALTITUDE) ================= -->
+            <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                <div class="lg:col-span-3 flex lg:flex-col items-center lg:items-start justify-between lg:justify-start gap-3 bg-gradient-to-b from-amber-500/20 via-night-900 to-night-900 p-4 rounded-xl border border-amber-500/40 z-10">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xl font-black text-amber-300 font-mono">12/16-17</span>
+                        <span class="px-2.5 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-bold">連泊 2 天</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white flex items-center gap-1.5">
+                            <i data-lucide="mountain-snow" class="w-4 h-4 text-amber-400"></i> 橫手山・澀峠
+                        </h3>
+                        <p class="text-xs text-slate-300 mt-1 flex items-center gap-1">
+                            <i data-lucide="bed" class="w-3.5 h-3.5 text-amber-400"></i> Hotel 2307 (濃湯溫泉連泊)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-9 glass-card rounded-2xl p-6 relative border-amber-500/30 bg-slate-900/90 shadow-lg shadow-amber-500/5">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <span class="text-xs font-bold tracking-widest text-amber-400 uppercase">PEAK HIGHLIGHT</span>
+                            <h4 class="text-xl sm:text-2xl font-extrabold text-white gold-glow">全日本最高海拔滑雪與絕美樹冰巡航</h4>
+                        </div>
+                        <span class="hidden sm:inline-flex px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs font-bold">
+                            最高標高 2,307m
+                        </span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-slate-950/80 rounded-xl p-4 border border-amber-500/20">
+                            <div class="flex items-center gap-2 text-amber-300 text-xs font-bold mb-1.5">
+                                <i data-lucide="snowflake" class="w-4 h-4"></i>
+                                <span>⛷️ 滑雪與雪場技術亮點</span>
+                            </div>
+                            <p class="text-sm text-slate-200"><strong class="text-amber-300">橫手山・澀峠 (2,307m)</strong>：全日本最高纜車站、壯觀樹冰群、超長景觀粉雪道</p>
+                        </div>
+                        <div class="bg-slate-950/80 rounded-xl p-4 border border-amber-500/20">
+                            <div class="flex items-center gap-2 text-indigo-300 text-xs font-bold mb-1.5">
+                                <i data-lucide="bus" class="w-4 h-4"></i>
+                                <span>🚌 交通樞紐指南</span>
+                            </div>
+                            <p class="text-sm text-slate-200">飯店出門即 Ski-in/Ski-out 直達橫手山纜車，全山系自由漫遊</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                        <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+                            <div class="text-xs font-bold text-red-300 flex items-center gap-1 mb-1">
+                                <i data-lucide="utensils" class="w-3.5 h-3.5"></i> 🍽️ 精選正餐
+                            </div>
+                            <div class="text-xs text-slate-200">橫手山滿天望餐廳 (羅宋牛肉湯配軟法麵包)、高山小屋燒咖哩</div>
+                        </div>
+
+                        <div class="bg-amber-500/10 border border-amber-500/30 rounded-lg p-3">
+                            <div class="text-xs font-bold text-amber-300 flex items-center gap-1 mb-1">
+                                <i data-lucide="cake" class="w-3.5 h-3.5"></i> 🍰 必吃甜點
+                            </div>
+                            <div class="text-xs text-slate-200">橫手山頂「雲之上麵包店」手工富士蘋果麵包、焦糖布丁</div>
+                        </div>
+
+                        <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-3">
+                            <div class="text-xs font-bold text-purple-300 flex items-center gap-1 mb-1">
+                                <i data-lucide="wine" class="w-3.5 h-3.5"></i> 🍶 特選地酒
+                            </div>
+                            <div class="text-xs text-slate-200">雪山特調濃醇熱可可、長野地酒「大雪溪」濁酒</div>
+                        </div>
+
+                        <div class="bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-3">
+                            <div class="text-xs font-bold text-emerald-300 flex items-center gap-1 mb-1">
+                                <i data-lucide="gift" class="w-3.5 h-3.5"></i> 🎁 必買名產
+                            </div>
+                            <div class="text-xs text-slate-200">日本國道最高地點 (2,172m) 到達紀念餅乾、白葡萄乾黑巧</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= DAY 8 ================= -->
+            <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                <div class="lg:col-span-3 flex lg:flex-col items-center lg:items-start justify-between lg:justify-start gap-3 bg-night-900/90 p-4 rounded-xl border border-slate-800 z-10">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl font-black text-snow-400 font-mono">12/18</span>
+                        <span class="px-2.5 py-0.5 rounded bg-snow-400/10 text-snow-300 border border-snow-400/20 text-xs font-semibold">DAY 08</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white flex items-center gap-1.5">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-snow-400"></i> 志賀高原 -&gt; 東京
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1">
+                            <i data-lucide="bed" class="w-3.5 h-3.5 text-slate-400"></i> 東京市區飯店 (銀座/丸之內)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-9 glass-card rounded-2xl p-6 relative">
+                    <div class="mb-4">
+                        <span class="text-xs font-bold tracking-widest text-amber-400 uppercase">DAY THEME</span>
+                        <h4 class="text-xl font-bold text-white">雪山撤收，新幹線返回東京繁華市區</h4>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
+                            <div class="flex items-center gap-2 text-snow-400 text-xs font-bold mb-1.5">
+                                <i data-lucide="snowflake" class="w-4 h-4"></i>
+                                <span>⛷️ 滑雪與雪場技術亮點</span>
+                            </div>
+                            <p class="text-sm text-slate-300">上午橫手山最後兩趟巡航，中午退房啟程下山</p>
+                        </div>
+                        <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
+                            <div class="flex items-center gap-2 text-indigo-400 text-xs font-bold mb-1.5">
+                                <i data-lucide="bus" class="w-4 h-4"></i>
+                                <span>🚌 交通樞紐指南</span>
+                            </div>
+                            <p class="text-sm text-slate-300">飯店接駁 -&gt; 長電急行巴士 -&gt; 長野站轉乘北陸新幹線 (82分) 抵達東京</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                        <div class="bg-red-500/5 border border-red-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-red-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="utensils" class="w-3.5 h-3.5"></i> 🍽️ 精選正餐
+                            </div>
+                            <div class="text-xs text-slate-200">銀座 篝 (米其林雞白湯松露拉麵)、築地直送特選握壽司</div>
+                        </div>
+
+                        <div class="bg-amber-500/5 border border-amber-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-amber-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="cake" class="w-3.5 h-3.5"></i> 🍰 必吃甜點
+                            </div>
+                            <div class="text-xs text-slate-200">銀座篝火焦糖布丁、資生堂 Parlour 花椿千層蛋糕</div>
+                        </div>
+
+                        <div class="bg-purple-500/5 border border-purple-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-purple-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="wine" class="w-3.5 h-3.5"></i> 🍶 特選地酒
+                            </div>
+                            <div class="text-xs text-slate-200">東京製茶所手工煎茶特調、銀座經典威士忌蘇打 (Highball)</div>
+                        </div>
+
+                        <div class="bg-emerald-500/5 border border-emerald-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-emerald-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="gift" class="w-3.5 h-3.5"></i> 🎁 必買名產
+                            </div>
+                            <div class="text-xs text-slate-200">東京香蕉 2026 生黑巧限定版、NewYork Perfect Cheese</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= DAY 9 ================= -->
+            <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                <div class="lg:col-span-3 flex lg:flex-col items-center lg:items-start justify-between lg:justify-start gap-3 bg-night-900/90 p-4 rounded-xl border border-slate-800 z-10">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl font-black text-snow-400 font-mono">12/19</span>
+                        <span class="px-2.5 py-0.5 rounded bg-snow-400/10 text-snow-300 border border-snow-400/20 text-xs font-semibold">DAY 09</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white flex items-center gap-1.5">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-snow-400"></i> 橫濱
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1">
+                            <i data-lucide="bed" class="w-3.5 h-3.5 text-slate-400"></i> 橫濱港未來景觀飯店 / 皇家花園
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-9 glass-card rounded-2xl p-6 relative">
+                    <div class="mb-4">
+                        <span class="text-xs font-bold tracking-widest text-amber-400 uppercase">DAY THEME</span>
+                        <h4 class="text-xl font-bold text-white">港灣微風漫步與異國紅磚夜景</h4>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
+                            <div class="flex items-center gap-2 text-snow-400 text-xs font-bold mb-1.5">
+                                <i data-lucide="snowflake" class="w-4 h-4"></i>
+                                <span>⛷️ 滑雪與雪場技術亮點</span>
+                            </div>
+                            <p class="text-sm text-slate-300">無滑雪 (港灣散策、紅磚倉庫探訪與遠征慶祝晚宴)</p>
+                        </div>
+                        <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
+                            <div class="flex items-center gap-2 text-indigo-400 text-xs font-bold mb-1.5">
+                                <i data-lucide="bus" class="w-4 h-4"></i>
+                                <span>🚌 交通樞紐指南</span>
+                            </div>
+                            <p class="text-sm text-slate-300">東京站 -&gt; JR 東海道線 / 橫須賀線 (約 30 分) 直達橫濱</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                        <div class="bg-red-500/5 border border-red-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-red-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="utensils" class="w-3.5 h-3.5"></i> 🍽️ 精選正餐
+                            </div>
+                            <div class="text-xs text-slate-200">橫濱中華街百年「同發」脆皮燒臘、馬車道十番館 復古法式牛排</div>
+                        </div>
+
+                        <div class="bg-amber-500/5 border border-amber-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-amber-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="cake" class="w-3.5 h-3.5"></i> 🍰 必吃甜點
+                            </div>
+                            <div class="text-xs text-slate-200">馬車道經典焦糖烤布丁、元町喜久家 (Rum Ball 萊姆酒球)</div>
+                        </div>
+
+                        <div class="bg-purple-500/5 border border-purple-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-purple-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="wine" class="w-3.5 h-3.5"></i> 🍶 特選地酒
+                            </div>
+                            <div class="text-xs text-slate-200">橫濱啤酒 (Yokohama Brewery 拉格)、港未來特調雞尾酒</div>
+                        </div>
+
+                        <div class="bg-emerald-500/5 border border-emerald-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-emerald-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="gift" class="w-3.5 h-3.5"></i> 🎁 必買名產
+                            </div>
+                            <div class="text-xs text-slate-200">橫濱 Ariake Harbour 栗子蛋糕、紅磚瓦甘醇巧克力薄餅</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= DAY 10 ================= -->
+            <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                <div class="lg:col-span-3 flex lg:flex-col items-center lg:items-start justify-between lg:justify-start gap-3 bg-night-900/90 p-4 rounded-xl border border-slate-800 z-10">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl font-black text-snow-400 font-mono">12/20</span>
+                        <span class="px-2.5 py-0.5 rounded bg-snow-400/10 text-snow-300 border border-snow-400/20 text-xs font-semibold">DAY 10</span>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white flex items-center gap-1.5">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-snow-400"></i> 橫濱 -&gt; 機場 -&gt; 回高雄
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1">
+                            <i data-lucide="home" class="w-3.5 h-3.5 text-slate-400"></i> 溫暖的家 (高雄 KHH)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-9 glass-card rounded-2xl p-6 relative">
+                    <div class="mb-4">
+                        <span class="text-xs font-bold tracking-widest text-amber-400 uppercase">DAY THEME</span>
+                        <h4 class="text-xl font-bold text-white">滿載戰利品直飛返家</h4>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
+                            <div class="flex items-center gap-2 text-snow-400 text-xs font-bold mb-1.5">
+                                <i data-lucide="snowflake" class="w-4 h-4"></i>
+                                <span>⛷️ 滑雪與雪場技術亮點</span>
+                            </div>
+                            <p class="text-sm text-slate-300">圓滿回程 (裝備整理封箱與離境核驗)</p>
+                        </div>
+                        <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
+                            <div class="flex items-center gap-2 text-indigo-400 text-xs font-bold mb-1.5">
+                                <i data-lucide="bus" class="w-4 h-4"></i>
+                                <span>🚌 交通樞紐指南</span>
+                            </div>
+                            <p class="text-sm text-slate-300">橫濱 YCAT -&gt; 京急巴士/特快車 (羽田30分/成田85分) -&gt; 直飛高雄 (KHH)</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                        <div class="bg-red-500/5 border border-red-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-red-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="utensils" class="w-3.5 h-3.5"></i> 🍽️ 精選正餐
+                            </div>
+                            <div class="text-xs text-slate-200">機場貴賓室 / 一風堂 特選黑帶豚骨拉麵</div>
+                        </div>
+
+                        <div class="bg-amber-500/5 border border-amber-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-amber-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="cake" class="w-3.5 h-3.5"></i> 🍰 必吃甜點
+                            </div>
+                            <div class="text-xs text-slate-200">羽田/成田限定 白桃鮮果大福</div>
+                        </div>
+
+                        <div class="bg-purple-500/5 border border-purple-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-purple-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="wine" class="w-3.5 h-3.5"></i> 🍶 特選地酒
+                            </div>
+                            <div class="text-xs text-slate-200">伊藤園特濃日本綠茶、ASAHI 極上生啤酒</div>
+                        </div>
+
+                        <div class="bg-emerald-500/5 border border-emerald-500/20 rounded-lg p-3">
+                            <div class="text-xs font-bold text-emerald-400 flex items-center gap-1 mb-1">
+                                <i data-lucide="gift" class="w-3.5 h-3.5"></i> 🎁 必買名產
+                            </div>
+                            <div class="text-xs text-slate-200">免稅店 Royce 生巧克力、獺祭二割三分</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer Signoff -->
+    <footer class="mt-20 border-t border-slate-800 bg-night-950 py-12 text-center text-slate-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center gap-4">
+            <div class="flex items-center gap-3">
+                <i data-lucide="mountain" class="w-5 h-5 text-snow-400"></i>
+                <span class="font-bold text-slate-200 text-sm">2026 日本長野・志賀・淺間遠征團隊</span>
+            </div>
+            <p class="max-w-xl text-slate-400 leading-relaxed">
+                由頂級日本滑雪教練 · 專業自由行策劃師 · 資深前端 UI/UX 設計師菁英團隊協作聯合呈獻
             </p>
-          </div>
-
-          <!-- Right Card -->
-          <div class="lg:col-span-7">
-            <div class="glass-card rounded-2xl p-6 hover:border-snow-400/40 transition-all duration-300 shadow-lg space-y-5">
-              
-              <!-- Tech & Transport Grid -->
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
-                  <div class="flex items-center gap-2 text-xs font-bold text-snow-300 uppercase tracking-wider mb-2">
-                    <i data-lucide="mountain" class="w-4 h-4 text-snow-400"></i>
-                    <span>⛷️ 滑雪地形指標</span>
-                  </div>
-                  <p class="text-xs text-slate-300 leading-relaxed">無滑雪 (大型雪具整頓 / 雪蠟補給整備)</p>
-                </div>
-
-                <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
-                  <div class="flex items-center gap-2 text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
-                    <i data-lucide="bus" class="w-4 h-4 text-indigo-400"></i>
-                    <span>🚌 交通指南</span>
-                  </div>
-                  <p class="text-xs text-slate-300 leading-relaxed">東京/機場 ➔ 北陸新幹線/JR高崎線 (約50分)</p>
-                </div>
-              </div>
-
-              <!-- Gourmet Pills Grid -->
-              <div class="space-y-3 pt-2 border-t border-slate-800/80">
-                <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">美饌與名產巡禮</div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  <div class="pill-food rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="utensils" class="w-4 h-4 shrink-0 text-amber-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">精選正餐</span>登利平 (群馬烤雞便當)、Shango (炸豬排義大利麵)</div>
-                  </div>
-                  <div class="pill-dessert rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="cake" class="w-4 h-4 shrink-0 text-rose-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">必吃甜點</span>Gateau Festa Harada 法國脆餅 (高崎限定生吐司款)</div>
-                  </div>
-                  <div class="pill-drink rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="wine" class="w-4 h-4 shrink-0 text-sky-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">特選地酒</span>群馬地酒 水芭蕉 純米大吟釀、榛名牧場鮮乳</div>
-                  </div>
-                  <div class="pill-omiyage rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="gift" class="w-4 h-4 shrink-0 text-emerald-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">名產伴手禮</span>高崎達摩不倒翁煎餅、上州名物烤饅頭</div>
-                  </div>
-                </div>
-              </div>
-
+            <div class="text-slate-400 font-mono text-[11px] pt-4 border-t border-slate-900 w-full max-w-md">
+                DESIGNED FOR ELITE POWDER HUNTERS & GOURMET ENTHUSIASTS
             </div>
-          </div>
         </div>
+    </footer>
 
-        <!-- Day 2 -->
-        <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-start group">
-          <div class="absolute left-[-17px] sm:left-[9px] lg:left-1/2 lg:-translate-x-1/2 z-20 flex items-center justify-center w-9 h-9 rounded-full bg-slate-950 border-2 border-snow-400 text-snow-400 group-hover:scale-110 group-hover:border-gold-400 transition-all duration-300 shadow-ice-glow">
-            <span class="text-xs font-extrabold">02</span>
-          </div>
-
-          <div class="lg:col-span-5 lg:text-right space-y-2">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-snow-500/10 border border-snow-400/30 text-snow-300 text-xs font-mono">
-              <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
-              <span>12/12 (四)</span>
-            </div>
-            <h3 class="text-xl font-extrabold text-white group-hover:text-snow-300 transition-colors">丸沼高原 ➔ 佐久平 ｜ 波浪地形與日光白根山粉雪巡航</h3>
-            <p class="text-xs text-slate-400 flex items-center lg:justify-end gap-1">
-              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-snow-400"></i>
-              <span>佐久平站前飯店 (東橫INN / Aqua Hotel)</span>
-            </p>
-          </div>
-
-          <div class="lg:col-span-7">
-            <div class="glass-card rounded-2xl p-6 hover:border-snow-400/40 transition-all duration-300 shadow-lg space-y-5">
-              
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
-                  <div class="flex items-center gap-2 text-xs font-bold text-snow-300 uppercase tracking-wider mb-2">
-                    <i data-lucide="mountain" class="w-4 h-4 text-snow-400"></i>
-                    <span>⛷️ 滑雪地形指標</span>
-                  </div>
-                  <p class="text-xs text-slate-300 leading-relaxed"><strong class="text-snow-300">丸沼高原 (標高 2,000m)</strong>：天然波浪地形公園 (Frozen Wave)、樹林野雪</p>
-                </div>
-
-                <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
-                  <div class="flex items-center gap-2 text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
-                    <i data-lucide="bus" class="w-4 h-4 text-indigo-400"></i>
-                    <span>🚌 交通指南</span>
-                  </div>
-                  <p class="text-xs text-slate-300 leading-relaxed">高崎出發專車/租車 ➔ 丸沼 (約75分) ➔ 下午轉往佐久平 (約80分)</p>
-                </div>
-              </div>
-
-              <div class="space-y-3 pt-2 border-t border-slate-800/80">
-                <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">美饌與名產巡禮</div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  <div class="pill-food rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="utensils" class="w-4 h-4 shrink-0 text-amber-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">精選正餐</span>佐久乃屋 安養寺熟成味噌拉麵、信州十四草蕎麥麵</div>
-                  </div>
-                  <div class="pill-dessert rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="cake" class="w-4 h-4 shrink-0 text-rose-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">必吃甜點</span>和泉屋菓子店 信州蘋果千層派、甘酒霜淇淋</div>
-                  </div>
-                  <div class="pill-drink rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="wine" class="w-4 h-4 shrink-0 text-sky-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">特選地酒</span>佐久名釀 澤之花 純米吟釀、信州白桃果汁</div>
-                  </div>
-                  <div class="pill-omiyage rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="gift" class="w-4 h-4 shrink-0 text-emerald-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">名產伴手禮</span>安養寺味噌漬起司、輕井澤果醬</div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- Day 3 -->
-        <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-start group">
-          <div class="absolute left-[-17px] sm:left-[9px] lg:left-1/2 lg:-translate-x-1/2 z-20 flex items-center justify-center w-9 h-9 rounded-full bg-slate-950 border-2 border-snow-400 text-snow-400 group-hover:scale-110 group-hover:border-gold-400 transition-all duration-300 shadow-ice-glow">
-            <span class="text-xs font-extrabold">03</span>
-          </div>
-
-          <div class="lg:col-span-5 lg:text-right space-y-2">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-snow-500/10 border border-snow-400/30 text-snow-300 text-xs font-mono">
-              <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
-              <span>12/13 (五)</span>
-            </div>
-            <h3 class="text-xl font-extrabold text-white group-hover:text-snow-300 transition-colors">Asama 2000 (高峰高原) ｜ 乾燥粉雪與高海拔刻滑訓練</h3>
-            <p class="text-xs text-slate-400 flex items-center lg:justify-end gap-1">
-              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-snow-400"></i>
-              <span>佐久平站前飯店</span>
-            </p>
-          </div>
-
-          <div class="lg:col-span-7">
-            <div class="glass-card rounded-2xl p-6 hover:border-snow-400/40 transition-all duration-300 shadow-lg space-y-5">
-              
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
-                  <div class="flex items-center gap-2 text-xs font-bold text-snow-300 uppercase tracking-wider mb-2">
-                    <i data-lucide="mountain" class="w-4 h-4 text-snow-400"></i>
-                    <span>⛷️ 滑雪地形指標</span>
-                  </div>
-                  <p class="text-xs text-slate-300 leading-relaxed"><strong class="text-snow-300">Asama 2000 (標高 2,000m)</strong>：日本超乾粉雪、平整壓雪陡坡刻滑 (Carving) 訓練</p>
-                </div>
-
-                <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
-                  <div class="flex items-center gap-2 text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
-                    <i data-lucide="bus" class="w-4 h-4 text-indigo-400"></i>
-                    <span>🚌 交通指南</span>
-                  </div>
-                  <p class="text-xs text-slate-300 leading-relaxed">佐久平站蓼科口 ➔ 高峰高原接駁巴士 (JR Bus, 約60分直達)</p>
-                </div>
-              </div>
-
-              <div class="space-y-3 pt-2 border-t border-slate-800/80">
-                <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">美饌與名產巡禮</div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  <div class="pill-food rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="utensils" class="w-4 h-4 shrink-0 text-amber-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">精選正餐</span>高峰高原餐廳 信州牛黑咖哩、佐久平站前「竹幸亭」地雞炭火燒</div>
-                  </div>
-                  <div class="pill-dessert rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="cake" class="w-4 h-4 shrink-0 text-rose-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">必吃甜點</span>雲上 Cafe 手工生乳捲、八岳牛奶泡芙</div>
-                  </div>
-                  <div class="pill-drink rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="wine" class="w-4 h-4 shrink-0 text-sky-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">特選地酒</span>長野精釀 Yona Yona Ale、高山焙茶拿鐵</div>
-                  </div>
-                  <div class="pill-omiyage rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="gift" class="w-4 h-4 shrink-0 text-emerald-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">名產伴手禮</span>淺間山熔岩巧克力、白樺高原牛奶夾心餅</div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- Day 4 -->
-        <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-start group">
-          <div class="absolute left-[-17px] sm:left-[9px] lg:left-1/2 lg:-translate-x-1/2 z-20 flex items-center justify-center w-9 h-9 rounded-full bg-slate-950 border-2 border-snow-400 text-snow-400 group-hover:scale-110 group-hover:border-gold-400 transition-all duration-300 shadow-ice-glow">
-            <span class="text-xs font-extrabold">04</span>
-          </div>
-
-          <div class="lg:col-span-5 lg:text-right space-y-2">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-snow-500/10 border border-snow-400/30 text-snow-300 text-xs font-mono">
-              <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
-              <span>12/14 (六)</span>
-            </div>
-            <h3 class="text-xl font-extrabold text-white group-hover:text-snow-300 transition-colors">Asama 2000 ➔ 長野站 ｜ 饅頭坡訓練與轉進長野門戶</h3>
-            <p class="text-xs text-slate-400 flex items-center lg:justify-end gap-1">
-              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-snow-400"></i>
-              <span>長野站直結飯店 (Hotel Metropolitan)</span>
-            </p>
-          </div>
-
-          <div class="lg:col-span-7">
-            <div class="glass-card rounded-2xl p-6 hover:border-snow-400/40 transition-all duration-300 shadow-lg space-y-5">
-              
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
-                  <div class="flex items-center gap-2 text-xs font-bold text-snow-300 uppercase tracking-wider mb-2">
-                    <i data-lucide="mountain" class="w-4 h-4 text-snow-400"></i>
-                    <span>⛷️ 滑雪地形指標</span>
-                  </div>
-                  <p class="text-xs text-slate-300 leading-relaxed"><strong class="text-snow-300">Asama 2000</strong>：上午進行饅頭坡 (Mogul) 與短半徑回轉專項練習，午後撤收轉移</p>
-                </div>
-
-                <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
-                  <div class="flex items-center gap-2 text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
-                    <i data-lucide="bus" class="w-4 h-4 text-indigo-400"></i>
-                    <span>🚌 交通指南</span>
-                  </div>
-                  <p class="text-xs text-slate-300 leading-relaxed">接駁巴士返回佐久平站 ➔ 北陸新幹線 (21分) 抵達長野站</p>
-                </div>
-              </div>
-
-              <div class="space-y-3 pt-2 border-t border-slate-800/80">
-                <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">美饌與名產巡禮</div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  <div class="pill-food rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="utensils" class="w-4 h-4 shrink-0 text-amber-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">精選正餐</span>明治亭 醬汁炸豬排蓋飯、蕎麥處 草笛 (核桃蕎麥麵)</div>
-                  </div>
-                  <div class="pill-dessert rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="cake" class="w-4 h-4 shrink-0 text-rose-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">必吃甜點</span>いろは堂 (炭烤信州御燒餅)、旬彩蘋果肉桂派</div>
-                  </div>
-                  <div class="pill-drink rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="wine" class="w-4 h-4 shrink-0 text-sky-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">特選地酒</span>志賀高原啤酒 (玉村本店 IPA)、千曲杏桃沙士</div>
-                  </div>
-                  <div class="pill-omiyage rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="gift" class="w-4 h-4 shrink-0 text-emerald-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">名產伴手禮</span>八幡屋礒五郎 七味唐辛子 (限定罐)、信州水鈴飴</div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- Day 5 -->
-        <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-start group">
-          <div class="absolute left-[-17px] sm:left-[9px] lg:left-1/2 lg:-translate-x-1/2 z-20 flex items-center justify-center w-9 h-9 rounded-full bg-slate-950 border-2 border-snow-400 text-snow-400 group-hover:scale-110 group-hover:border-gold-400 transition-all duration-300 shadow-ice-glow">
-            <span class="text-xs font-extrabold">05</span>
-          </div>
-
-          <div class="lg:col-span-5 lg:text-right space-y-2">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-snow-500/10 border border-snow-400/30 text-snow-300 text-xs font-mono">
-              <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
-              <span>12/15 (日)</span>
-            </div>
-            <h3 class="text-xl font-extrabold text-white group-hover:text-snow-300 transition-colors">長野 ➔ 熊之湯 ➔ 橫手山 ｜ 直攻粉雪天堂熊之湯</h3>
-            <p class="text-xs text-slate-400 flex items-center lg:justify-end gap-1">
-              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-snow-400"></i>
-              <span>Hotel & Onsen 2307 Shiga Kogen</span>
-            </p>
-          </div>
-
-          <div class="lg:col-span-7">
-            <div class="glass-card rounded-2xl p-6 hover:border-snow-400/40 transition-all duration-300 shadow-lg space-y-5">
-              
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
-                  <div class="flex items-center gap-2 text-xs font-bold text-snow-300 uppercase tracking-wider mb-2">
-                    <i data-lucide="mountain" class="w-4 h-4 text-snow-400"></i>
-                    <span>⛷️ 滑雪地形指標</span>
-                  </div>
-                  <p class="text-xs text-slate-300 leading-relaxed"><strong class="text-snow-300">熊之湯滑雪場</strong>：全北向單一山谷極致細粉雪、巨型天然饅頭坡、單板技術挑戰</p>
-                </div>
-
-                <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
-                  <div class="flex items-center gap-2 text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
-                    <i data-lucide="bus" class="w-4 h-4 text-indigo-400"></i>
-                    <span>🚌 交通指南</span>
-                  </div>
-                  <p class="text-xs text-slate-300 leading-relaxed">長野站東口 23 號站牌 ➔ 長電急行巴士 (75分) 直達熊之湯</p>
-                </div>
-              </div>
-
-              <div class="space-y-3 pt-2 border-t border-slate-800/80">
-                <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">美饌與名產巡禮</div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  <div class="pill-food rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="utensils" class="w-4 h-4 shrink-0 text-amber-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">精選正餐</span>熊之湯山頂餐廳 野澤菜牛肉麵、Hotel 2307 炭火信州牛溫泉會席</div>
-                  </div>
-                  <div class="pill-dessert rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="cake" class="w-4 h-4 shrink-0 text-rose-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">必吃甜點</span>橫手山頂「Crumpet Cafe」英式正統鬆餅、高山溫泉饅頭</div>
-                  </div>
-                  <div class="pill-drink rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="wine" class="w-4 h-4 shrink-0 text-sky-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">特選地酒</span>志賀高原深層水低溫滴濾咖啡、玉村本店「其之十」美式 IPA</div>
-                  </div>
-                  <div class="pill-omiyage rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="gift" class="w-4 h-4 shrink-0 text-emerald-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">名產伴手禮</span>志賀高原高山硫磺溫泉粉、善光寺味噌煎餅</div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- Day 6-7 Highlight -->
-        <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-start group">
-          <div class="absolute left-[-17px] sm:left-[9px] lg:left-1/2 lg:-translate-x-1/2 z-20 flex items-center justify-center w-9 h-9 rounded-full bg-gold-500 border-2 border-amber-300 text-slate-950 group-hover:scale-110 transition-all duration-300 shadow-gold-glow">
-            <span class="text-xs font-black">6-7</span>
-          </div>
-
-          <div class="lg:col-span-5 lg:text-right space-y-2">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-mono">
-              <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-              <span>12/16 (一) - 12/17 (二) 【雙日深巡】</span>
-            </div>
-            <h3 class="text-xl sm:text-2xl font-black text-amber-300 group-hover:text-gold-400 transition-colors">
-              橫手山・澀峠 (志賀高原) ｜ 日本最高海拔與樹冰巡航
-            </h3>
-            <p class="text-xs text-slate-400 flex items-center lg:justify-end gap-1">
-              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-gold-400"></i>
-              <span>Hotel & Onsen 2307 Shiga Kogen (連泊濃湯溫泉)</span>
-            </p>
-          </div>
-
-          <div class="lg:col-span-7">
-            <div class="glass-card rounded-2xl p-6 border-amber-500/30 hover:border-amber-500/60 transition-all duration-300 shadow-gold-glow space-y-5">
-              
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-slate-900/90 rounded-xl p-4 border border-amber-500/20">
-                  <div class="flex items-center gap-2 text-xs font-bold text-gold-400 uppercase tracking-wider mb-2">
-                    <i data-lucide="mountain-snow" class="w-4 h-4 text-gold-400"></i>
-                    <span>⛷️ 滑雪地形指標 (最高峰 2,307m)</span>
-                  </div>
-                  <p class="text-xs text-slate-200 leading-relaxed"><strong class="text-gold-400">橫手山・澀峠 (標高 2,307m)</strong>：全日本最高纜車站、壯觀樹冰群景觀、長距離粉雪巡航雪道</p>
-                </div>
-
-                <div class="bg-slate-900/90 rounded-xl p-4 border border-amber-500/20">
-                  <div class="flex items-center gap-2 text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
-                    <i data-lucide="bus" class="w-4 h-4 text-indigo-400"></i>
-                    <span>🚌 交通指南</span>
-                  </div>
-                  <p class="text-xs text-slate-300 leading-relaxed">飯店門口直結 Ski-in / Ski-out 橫手山纜車，全山系無限漫遊</p>
-                </div>
-              </div>
-
-              <div class="space-y-3 pt-2 border-t border-slate-800/80">
-                <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">美饌與名產巡禮</div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  <div class="pill-food rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="utensils" class="w-4 h-4 shrink-0 text-amber-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">精選正餐</span>橫手山滿天望餐廳 (羅宋牛肉湯配軟法麵包)、高山小屋燒咖哩</div>
-                  </div>
-                  <div class="pill-dessert rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="cake" class="w-4 h-4 shrink-0 text-rose-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">必吃甜點</span>橫手山頂「雲之上麵包店」手工富士蘋果麵包、焦糖布丁</div>
-                  </div>
-                  <div class="pill-drink rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="wine" class="w-4 h-4 shrink-0 text-sky-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">特選地酒</span>雪山特調濃醇熱可可、長野地酒「大雪溪」濁酒</div>
-                  </div>
-                  <div class="pill-omiyage rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="gift" class="w-4 h-4 shrink-0 text-emerald-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">名產伴手禮</span>日本國道最高地點 (2,172m) 到達紀念餅乾、白葡萄乾黑巧</div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- Day 8 -->
-        <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-start group">
-          <div class="absolute left-[-17px] sm:left-[9px] lg:left-1/2 lg:-translate-x-1/2 z-20 flex items-center justify-center w-9 h-9 rounded-full bg-slate-950 border-2 border-snow-400 text-snow-400 group-hover:scale-110 group-hover:border-gold-400 transition-all duration-300 shadow-ice-glow">
-            <span class="text-xs font-extrabold">08</span>
-          </div>
-
-          <div class="lg:col-span-5 lg:text-right space-y-2">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-snow-500/10 border border-snow-400/30 text-snow-300 text-xs font-mono">
-              <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
-              <span>12/18 (三)</span>
-            </div>
-            <h3 class="text-xl font-extrabold text-white group-hover:text-snow-300 transition-colors">志賀高原 ➔ 東京 ｜ 雪山撤收與返回東京繁華</h3>
-            <p class="text-xs text-slate-400 flex items-center lg:justify-end gap-1">
-              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-snow-400"></i>
-              <span>東京市區飯店 (銀座 / 丸之內商圈)</span>
-            </p>
-          </div>
-
-          <div class="lg:col-span-7">
-            <div class="glass-card rounded-2xl p-6 hover:border-snow-400/40 transition-all duration-300 shadow-lg space-y-5">
-              
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
-                  <div class="flex items-center gap-2 text-xs font-bold text-snow-300 uppercase tracking-wider mb-2">
-                    <i data-lucide="mountain" class="w-4 h-4 text-snow-400"></i>
-                    <span>⛷️ 滑雪地形指標</span>
-                  </div>
-                  <p class="text-xs text-slate-300 leading-relaxed">上午橫手山最後 2 趟晨間粉雪巡航，中午退房啟程下山</p>
-                </div>
-
-                <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
-                  <div class="flex items-center gap-2 text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
-                    <i data-lucide="bus" class="w-4 h-4 text-indigo-400"></i>
-                    <span>🚌 交通指南</span>
-                  </div>
-                  <p class="text-xs text-slate-300 leading-relaxed">飯店接駁 ➔ 長電急行巴士 ➔ 長野站轉乘北陸新幹線 (82分) 抵達東京</p>
-                </div>
-              </div>
-
-              <div class="space-y-3 pt-2 border-t border-slate-800/80">
-                <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">美饌與名產巡禮</div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  <div class="pill-food rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="utensils" class="w-4 h-4 shrink-0 text-amber-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">精選正餐</span>銀座 篝 (米其林雞白湯松露拉麵)、築地直送特選握壽司</div>
-                  </div>
-                  <div class="pill-dessert rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="cake" class="w-4 h-4 shrink-0 text-rose-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">必吃甜點</span>銀座篝火焦糖布丁、資生堂 Parlour 花椿千層蛋糕</div>
-                  </div>
-                  <div class="pill-drink rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="wine" class="w-4 h-4 shrink-0 text-sky-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">特選地酒</span>東京製茶所手工煎茶特調、銀座經典威士忌蘇打 (Highball)</div>
-                  </div>
-                  <div class="pill-omiyage rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="gift" class="w-4 h-4 shrink-0 text-emerald-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">名產伴手禮</span>東京香蕉 2026 生黑巧限定版、NewYork Perfect Cheese</div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- Day 9 -->
-        <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-start group">
-          <div class="absolute left-[-17px] sm:left-[9px] lg:left-1/2 lg:-translate-x-1/2 z-20 flex items-center justify-center w-9 h-9 rounded-full bg-slate-950 border-2 border-snow-400 text-snow-400 group-hover:scale-110 group-hover:border-gold-400 transition-all duration-300 shadow-ice-glow">
-            <span class="text-xs font-extrabold">09</span>
-          </div>
-
-          <div class="lg:col-span-5 lg:text-right space-y-2">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-snow-500/10 border border-snow-400/30 text-snow-300 text-xs font-mono">
-              <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
-              <span>12/19 (四)</span>
-            </div>
-            <h3 class="text-xl font-extrabold text-white group-hover:text-snow-300 transition-colors">橫濱 ｜ 港灣微風漫步與異國紅磚夜景</h3>
-            <p class="text-xs text-slate-400 flex items-center lg:justify-end gap-1">
-              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-snow-400"></i>
-              <span>橫濱港未來景觀飯店 / 皇家花園飯店</span>
-            </p>
-          </div>
-
-          <div class="lg:col-span-7">
-            <div class="glass-card rounded-2xl p-6 hover:border-snow-400/40 transition-all duration-300 shadow-lg space-y-5">
-              
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
-                  <div class="flex items-center gap-2 text-xs font-bold text-snow-300 uppercase tracking-wider mb-2">
-                    <i data-lucide="compass" class="w-4 h-4 text-snow-400"></i>
-                    <span>⛷️ 活動與休閒指標</span>
-                  </div>
-                  <p class="text-xs text-slate-300 leading-relaxed">無滑雪 (港灣散策、紅磚倉庫探訪與遠征慶祝晚宴)</p>
-                </div>
-
-                <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
-                  <div class="flex items-center gap-2 text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
-                    <i data-lucide="bus" class="w-4 h-4 text-indigo-400"></i>
-                    <span>🚌 交通指南</span>
-                  </div>
-                  <p class="text-xs text-slate-300 leading-relaxed">東京站 ➔ JR 東海道線 / 橫須賀線 (約30分) 直達橫濱</p>
-                </div>
-              </div>
-
-              <div class="space-y-3 pt-2 border-t border-slate-800/80">
-                <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">美饌與名產巡禮</div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  <div class="pill-food rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="utensils" class="w-4 h-4 shrink-0 text-amber-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">精選正餐</span>橫濱中華街百年「同發」脆皮燒臘、馬車道十番館 復古法式牛排</div>
-                  </div>
-                  <div class="pill-dessert rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="cake" class="w-4 h-4 shrink-0 text-rose-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">必吃甜點</span>馬車道經典焦糖烤布丁、元町喜久家 (Rum Ball 萊姆酒球)</div>
-                  </div>
-                  <div class="pill-drink rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="wine" class="w-4 h-4 shrink-0 text-sky-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">特選地酒</span>橫濱啤酒 (Yokohama Brewery 經典拉格)、港未來特調雞尾酒</div>
-                  </div>
-                  <div class="pill-omiyage rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="gift" class="w-4 h-4 shrink-0 text-emerald-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">名產伴手禮</span>橫濱 Ariake Harbour 栗子蛋糕、紅磚瓦甘醇巧克力薄餅</div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- Day 10 -->
-        <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-start group">
-          <div class="absolute left-[-17px] sm:left-[9px] lg:left-1/2 lg:-translate-x-1/2 z-20 flex items-center justify-center w-9 h-9 rounded-full bg-emerald-500 border-2 border-emerald-300 text-slate-950 group-hover:scale-110 transition-all duration-300 shadow-lg shadow-emerald-500/20">
-            <i data-lucide="plane-takeoff" class="w-4 h-4"></i>
-          </div>
-
-          <div class="lg:col-span-5 lg:text-right space-y-2">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono">
-              <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
-              <span>12/20 (五)</span>
-            </div>
-            <h3 class="text-xl font-extrabold text-white group-hover:text-emerald-300 transition-colors">橫濱 ➔ 機場 ➔ 滿載返高雄</h3>
-            <p class="text-xs text-slate-400 flex items-center lg:justify-end gap-1">
-              <i data-lucide="home" class="w-3.5 h-3.5 text-emerald-400"></i>
-              <span>溫暖的家 (高雄 KHH)</span>
-            </p>
-          </div>
-
-          <div class="lg:col-span-7">
-            <div class="glass-card rounded-2xl p-6 hover:border-emerald-500/40 transition-all duration-300 shadow-lg space-y-5">
-              
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
-                  <div class="flex items-center gap-2 text-xs font-bold text-emerald-300 uppercase tracking-wider mb-2">
-                    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
-                    <span>⛷️ 遠征總結</span>
-                  </div>
-                  <p class="text-xs text-slate-300 leading-relaxed">圓滿完成 10 天雪場巡航與美饌遠征行程</p>
-                </div>
-
-                <div class="bg-slate-900/80 rounded-xl p-4 border border-slate-800">
-                  <div class="flex items-center gap-2 text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
-                    <i data-lucide="plane" class="w-4 h-4 text-indigo-400"></i>
-                    <span>🚌 交通指南</span>
-                  </div>
-                  <p class="text-xs text-slate-300 leading-relaxed">橫濱 YCAT ➔ 京急巴士/特快車 (羽田約30分/成田約85分) ➔ 直飛高雄 (KHH)</p>
-                </div>
-              </div>
-
-              <div class="space-y-3 pt-2 border-t border-slate-800/80">
-                <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">美饌與名產巡禮</div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                  <div class="pill-food rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="utensils" class="w-4 h-4 shrink-0 text-amber-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">精選正餐</span>機場貴賓室 / 一風堂 特選黑帶豚骨拉麵</div>
-                  </div>
-                  <div class="pill-dessert rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="cake" class="w-4 h-4 shrink-0 text-rose-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">必吃甜點</span>羽田/成田限定 白桃鮮果大福</div>
-                  </div>
-                  <div class="pill-drink rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="wine" class="w-4 h-4 shrink-0 text-sky-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">特選地酒</span>伊藤園特濃日本綠茶、ASAHI 極上生啤酒</div>
-                  </div>
-                  <div class="pill-omiyage rounded-xl p-3 text-xs flex items-start gap-2">
-                    <i data-lucide="gift" class="w-4 h-4 shrink-0 text-emerald-400 mt-0.5"></i>
-                    <div><span class="font-bold block mb-0.5">免稅戰利品</span>免稅店 Royce 生巧克力、獺祭二割三分</div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="border-t border-slate-800/80 mt-16 bg-slate-950/80 backdrop-blur-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-xs text-slate-500 space-y-3">
-      <div class="flex justify-center items-center gap-2 text-slate-400 font-medium">
-        <span>頂級日本滑雪教練</span> ✕ <span>專業自由行策劃師</span> ✕ <span>資深前端 UI/UX 設計團隊</span>
-      </div>
-      <p>© 2026 Japan Snow & Culinary Far East Expedition. All Rights Reserved. PySpark Live Dataset Integrated.</p>
-    </div>
-  </footer>
-
-  <script>
-    // Initialize Lucide Icons
-    lucide.createIcons();
-  </script>
+    <!-- Lucide Icons Initialization -->
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
